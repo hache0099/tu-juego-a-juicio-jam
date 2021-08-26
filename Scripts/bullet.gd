@@ -14,3 +14,6 @@ func _process(delta):
 func set_move(dir):
 	move_direction = dir
 	print(dir)
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
