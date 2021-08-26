@@ -9,9 +9,6 @@ func _ready():
 	pass
 
 func _process(delta):
-	if Input.is_action_just_pressed("click"):
-		target_pos = get_global_mouse_position()
-	
 	var move_direction = target_pos - position
 	if move_direction.length() > 10:
 		position += move_direction.normalized() * SPEED * delta
