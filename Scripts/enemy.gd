@@ -11,10 +11,15 @@ onready var ROOT_GAME = get_node("/root/game")
 
 var bullet = preload("res://Scenes/bullet.tscn")
 
+var canMove = true
 var move_direction : Vector2
+var target_position : Vector2 setget set_target_pos
 
 func _ready():
 	$shootingTime.wait_time = tiempo_disparo
+
+func set_target_pos(pos : Vector2):
+	target_position = pos
 
 func set_move_dir(dir):
 	if typeof(dir) == TYPE_VECTOR2:
@@ -24,9 +29,10 @@ func set_move_dir(dir):
 	move_direction = polar2cartesian(1,dir)
 
 func _process(delta):
-	move_enemy()
+	if canMove:
+		position += move_direction.normalized() * velocidad * delta
 
-func move_enemy():
+func move_enemy(delta):
 	pass
 
 func shoot():

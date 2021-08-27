@@ -39,6 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="tu_juego_a_juicio_jam"
+run/main_scene="res://Scenes/game.tscn"
 config/icon="res://icon.png"
 
 [autoload]

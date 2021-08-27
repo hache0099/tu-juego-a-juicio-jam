@@ -19,6 +19,6 @@ func set_move(dir):
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
-
 func _on_bullet_area_entered(area):
-	queue_free()
+#	queue_free()
+	pass

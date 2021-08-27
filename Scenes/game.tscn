@@ -7,8 +7,18 @@
 [node name="game" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 90.0
+margin_top = 70.0
+margin_right = 934.0
+margin_bottom = 402.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="objetivo" parent="." instance=ExtResource( 1 )]
 position = Vector2( 511.528, 529.167 )
 
 [node name="enemy_simple_shoot" parent="." instance=ExtResource( 2 )]
-position = Vector2( 294.489, 156.683 )
+position = Vector2( 171.813, 129.993 )
