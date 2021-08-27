@@ -23,5 +23,6 @@ shape = SubResource( 1 )
 position = Vector2( 70, 0 )
 
 [node name="icon" type="Sprite" parent="position_to_move" index="0"]
+visible = false
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
