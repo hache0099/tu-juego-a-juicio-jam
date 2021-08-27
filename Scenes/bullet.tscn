@@ -19,4 +19,5 @@ shape = SubResource( 1 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 rect = Rect2( -7.68, -7.68, 15.36, 15.36 )
 
+[connection signal="area_entered" from="." to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
