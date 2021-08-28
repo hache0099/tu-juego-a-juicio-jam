@@ -13,8 +13,6 @@ velocidad = 270.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 4.78, 4.78 )
-frame = 2
-playing = true
 offset = Vector2( -0.5, -1 )
 
 [node name="CollisionShape2D" parent="." index="1"]
