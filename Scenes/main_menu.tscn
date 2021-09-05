@@ -1,0 +1,244 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Sprites/Opciones1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Opciones2.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/mini_pixel-7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/Cortado1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Cortado2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Cortado3.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/main_menu.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/grabber_sprite.png" type="Texture" id=8]
+[ext_resource path="res://Music/Mootivations (outro).wav" type="AudioStream" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.435294, 0.87451, 0.941176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.560784, 0.529412, 0.529412, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.905882, 0.533333, 1, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="DynamicFont" id=10]
+resource_local_to_scene = true
+size = 35
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 5
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=11]
+default_font = SubResource( 10 )
+Button/colors/font_color = Color( 0.968627, 0.956863, 0.956863, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.913725, 0.956863, 0.286275, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 5 )
+HSlider/icons/grabber = ExtResource( 8 )
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource( 8 )
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource( 6 )
+HSlider/styles/grabber_area_highlight = SubResource( 7 )
+HSlider/styles/slider = SubResource( 8 )
+Panel/styles/panel = SubResource( 9 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=14]
+resource_local_to_scene = true
+size = 28
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.117647, 0.117647, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="AnimatedSprite" parent="."]
+position = Vector2( 512, 103.183 )
+scale = Vector2( 2.76, 2.76 )
+frames = SubResource( 12 )
+frame = 2
+playing = true
+
+[node name="menu_animated" type="AnimatedSprite" parent="."]
+position = Vector2( 513.239, 394.344 )
+scale = Vector2( 0.64, 0.64 )
+frames = SubResource( 13 )
+playing = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.386
+anchor_top = 0.485
+anchor_right = 0.618
+anchor_bottom = 0.78
+margin_left = 1.73599
+margin_right = 2.16797
+margin_bottom = -3.05176e-05
+custom_constants/separation = 34
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="Button" parent="VBoxContainer"]
+margin_right = 237.0
+margin_bottom = 36.0
+text = "JUGAR"
+
+[node name="options" type="Button" parent="VBoxContainer"]
+margin_top = 70.0
+margin_right = 237.0
+margin_bottom = 106.0
+text = "OPCIONES"
+
+[node name="salir" type="Button" parent="VBoxContainer"]
+visible = false
+margin_top = 140.0
+margin_right = 237.0
+margin_bottom = 176.0
+text = "SALIR"
+
+[node name="Popup" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -163.5
+margin_top = -55.8048
+margin_right = 163.5
+margin_bottom = 208.195
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="music_volume" type="Label" parent="Popup/Panel"]
+margin_left = -22.0
+margin_top = 67.0
+margin_right = 199.0
+margin_bottom = 103.0
+custom_fonts/font = SubResource( 14 )
+text = "Volumen musica"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="music_volume2" type="Label" parent="Popup/Panel"]
+margin_left = -9.0
+margin_top = 119.0
+margin_right = 180.0
+margin_bottom = 155.0
+custom_fonts/font = SubResource( 14 )
+text = "Volumen efectos"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="volume_slider" type="HSlider" parent="Popup/Panel"]
+margin_left = 171.0
+margin_top = 75.0
+margin_right = 309.0
+margin_bottom = 91.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="volume_slider2" type="HSlider" parent="Popup/Panel"]
+margin_left = 171.0
+margin_top = 125.724
+margin_right = 309.0
+margin_bottom = 141.724
+max_value = 1.0
+step = 0.01
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="close" type="Button" parent="Popup/Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -48.5
+margin_top = -50.1422
+margin_right = 48.5
+margin_bottom = -14.1422
+text = "Cerrar"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/salir" to="." method="_on_salir_pressed"]
+[connection signal="visibility_changed" from="Popup" to="." method="_on_Popup_visibility_changed"]
+[connection signal="value_changed" from="Popup/Panel/volume_slider" to="." method="_on_volume_slider_value_changed" binds= [ 0 ]]
+[connection signal="value_changed" from="Popup/Panel/volume_slider2" to="." method="_on_volume_slider_value_changed" binds= [ 1 ]]
+[connection signal="pressed" from="Popup/Panel/close" to="." method="_on_popup_close_pressed"]

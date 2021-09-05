@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Disparo.wav-f6a65c9437464a3a8e3283f05609cc5b.sample"
+
+[deps]
+
+source_file="res://Sonidos/Disparo.wav"
+dest_files=[ "res://.import/Disparo.wav-f6a65c9437464a3a8e3283f05609cc5b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

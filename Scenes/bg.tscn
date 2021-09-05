@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://bg_anim.tres" type="Animation" id=1]
+
+[node name="bg" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg1" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.41178, 0.713613, 0.976471, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg2" type="ColorRect" parent="."]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 994.0
+margin_bottom = 570.0
+color = Color( 0.702866, 0.702866, 0.702866, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bg"
+anims/bg = ExtResource( 1 )

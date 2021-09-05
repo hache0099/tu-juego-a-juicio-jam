@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mootivations (outro).wav-59c51f1455f9e389c1966e176cd7f86d.sample"
+
+[deps]
+
+source_file="res://Music/Mootivations (outro).wav"
+dest_files=[ "res://.import/Mootivations (outro).wav-59c51f1455f9e389c1966e176cd7f86d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/FocoMovimiento.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/mc3.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/mc4.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/miradaDerecha.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/mc1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/mc2.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Derecha",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Normal",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "Prendiendo",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Prendido",
+"speed": 5.0
+} ]
+
+[node name="Foco" type="Area2D"]
+position = Vector2( 0.504444, 4.12702 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+Velocidad = 400
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 5, 5 )
+frames = SubResource( 1 )
+animation = "Normal"
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -29.9832, -15.0134, -25.0776, -14.925, -25.0704, -20.009, 29.8264, -20.2076, 29.975, -14.9305, 34.9548, -15.2278, 35.1778, -10.248, 39.6348, -10.282, 40.0675, 9.96716, 39.8708, 19.686, 35.3874, 20.158, 34.9154, 24.8774, 29.8706, 24.9355, 30.0581, 29.873, 10.1831, 29.9355, 10.0581, 40.0605, -4.75444, 40.1855, -5.12944, 29.998, -25.0819, 30.1405, -25.1409, 24.9492, -30.0962, 25.0082, -29.9783, 19.9938, -34.9926, 20.0528, -34.9771, -10.1079, -29.9832, -10.0195 )
+
+[node name="Node2D" type="Node2D" parent="."]

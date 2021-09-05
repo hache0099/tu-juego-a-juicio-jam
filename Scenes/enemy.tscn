@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://enemy_animations.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/enemy.gd" type="Script" id=2]
+[ext_resource path="res://Sonidos/Explosión!!!!.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sonidos/Disparo.wav" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.8363, 50.2445 )
+
+[node name="enemy" type="Area2D" groups=[
+"enemy",
+]]
+input_pickable = false
+collision_layer = 2
+collision_mask = 5
+script = ExtResource( 2 )
+vidas = 3
+tiempo_disparo = 2.0
+
+[node name="check_enter_rect" type="ColorRect" parent="."]
+visible = false
+margin_left = -30.0
+margin_top = -33.0
+margin_right = 30.0
+margin_bottom = 33.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2.5, 2.5 )
+frames = ExtResource( 1 )
+animation = "enemigo_1"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 70
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2( 0, -1 )
+spread = 65.0
+initial_velocity = 200.0
+initial_velocity_random = 0.73
+angular_velocity = 50.0
+angular_velocity_random = 1.0
+linear_accel = 10.0
+damping = 42.86
+angle = 45.0
+angle_random = 1.0
+scale_amount = 5.0
+scale_amount_random = 0.5
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -35, -35, 70, 70 )
+
+[node name="shootingTime" type="Timer" parent="."]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="shoot_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -9.905
+bus = "SFX"
+
+[node name="dead_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[connection signal="area_entered" from="." to="." method="_on_enemy_area_entered"]
+[connection signal="timeout" from="shootingTime" to="." method="_on_shootingTime_timeout"]
