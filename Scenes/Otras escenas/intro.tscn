@@ -1,0 +1,158 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Music/PUZZLE.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Fonts/mini_pixel-7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/Heart2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Heart3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Heart1.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Game Scenes/intro.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/Heart4.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Otras escenas/main_menu.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 55
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+resource_local_to_scene = true
+default_font = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=4]
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("text:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.9, 7.6, 10.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Con cada inicio de un
+nuevo proyecto
+se necesita una fuerte 
+motivacion para seguir
+por largos periodos de tiempo", "Esta debe mantener a flote la
+DETERMINACION
+del creador y generar
+mas motivacion", "Deberas mantener esa
+INSPIRACION
+y protegerla de ideas negativas", "Seras capaz de mantener...
+La MOTIVACION?" ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("text:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -753.532, -0.25, 0, 0.0225, 555.085, 161.995, -0.25, 0, 0.25, 0, 161.995, -0.25, 0, 0.25, 0, 1118.33, -0.25, 0, 0.25, 0, -753.532, -0.25, 0, 0.0225, 555.085, 161.995, -0.25, 0, 0.25, 0, 161.995, -0.25, 0, 0.25, 0, 1118.33, -0.25, 0, 0.25, 0, -753.532, -0.25, 0, 0.0225, 555.085, 161.995, -0.25, 0, 0.25, 0, 161.995, -0.25, 0, 0.25, 0, 1118.33, -0.25, 0, 0.25, 0, -753.532, -0.25, 0, 0.0225, 555.085, 161.995, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 3.3, 3.8, 3.9, 4.4, 7, 7.5, 7.6, 8.1, 10.2, 10.7, 10.8, 11.3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("text:rect_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 3.3, 3.8, 3.9, 4.4, 7, 7.5, 7.6, 8.1, 10.2, 10.7, 10.8, 11.3 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("skip_Label:rect_position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 656.937, -0.25, 0, 0.25, 0, 656.937, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 1.5, 2 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("skip_Label:rect_position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 617.652, -0.25, 0, 0.00739944, -49.218, 539.164, -0.135721, 0.93634, 0.25, 0 ),
+"times": PoolRealArray( 1.5, 2 )
+}
+
+[sub_resource type="DynamicFont" id=5]
+resource_local_to_scene = true
+size = 40
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+menu = ExtResource( 8 )
+
+[node name="text" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1265.53
+margin_top = -294.0
+margin_right = -565.491
+margin_bottom = 98.0
+text = "Con cada inicio de un
+nuevo proyecto
+se necesita una fuerte 
+motivacion para seguir
+por largos periodos de tiempo"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heart" type="AnimatedSprite" parent="."]
+position = Vector2( 512, 486.49 )
+scale = Vector2( 0.439999, 0.439999 )
+frames = SubResource( 3 )
+frame = 2
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/intro_0 = SubResource( 4 )
+
+[node name="skip_Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.607843 )
+margin_left = 656.937
+margin_top = 617.652
+margin_right = 1012.94
+margin_bottom = 673.652
+custom_fonts/font = SubResource( 5 )
+text = "Presiona ENTER para saltear"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -3.714
