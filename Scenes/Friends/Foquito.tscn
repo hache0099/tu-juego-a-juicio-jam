@@ -1,39 +1,63 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Friends/FocoMovimiento.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/mc3.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/mc4.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/miradaDerecha.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Grey1.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/mc1.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/mc2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/mc_shoot_sp.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/mc_move_sp.png" type="Texture" id=4]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 42, 0, 21, 17 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 21, 0, 21, 17 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 23, 22, 23, 22 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 21, 17 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 23, 0, 23, 22 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 22, 23, 22 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 23, 22, 23, 22 )
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "Derecha",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "Prendiendo",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "Normal",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "Prendido",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "Apagado",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 7 ), SubResource( 6 ) ],
+"loop": false,
+"name": "Prendiendo",
+"speed": 15.0
 } ]
 
 [node name="Foco" type="Area2D" groups=[
@@ -48,8 +72,8 @@ Velocidad = 400
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 5, 5 )
-frames = SubResource( 1 )
-animation = "Normal"
+frames = SubResource( 3 )
+animation = "Prendido"
 playing = true
 offset = Vector2( -0.5, -2.5 )
 

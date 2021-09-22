@@ -1,15 +1,28 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/BreakRosa.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Heart1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/NPC/heart_sp.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Friends/objetivo.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/Heart4.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Heart2.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Heart3.png" type="Texture" id=7]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 532, 452 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 532, 0, 532, 452 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 1064, 0, 532, 452 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 1596, 0, 532, 452 )
+
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 9.8
@@ -20,10 +33,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=6]
 radius = 36.5433
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=7]
 length = 0.25
 step = 0.05
 tracks/0/type = "bezier"
@@ -63,18 +76,17 @@ script = ExtResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.271957, 0.271957 )
-frames = SubResource( 1 )
-frame = 2
+frames = SubResource( 5 )
 playing = true
 offset = Vector2( 0, -10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -0.406414 )
 z_index = 10
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/hurt = SubResource( 3 )
+anims/hurt = SubResource( 7 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false

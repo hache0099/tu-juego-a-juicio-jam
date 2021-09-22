@@ -1,35 +1,65 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Sprites/MCBala3.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Balas/bala_MC_sp.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/bullet.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/MCBala1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/MCBala2.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Enemigo Verde Bala1.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Enemigo rojo Bala2.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Enemigo rojo Bala1.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Enemigo rojo Bala3.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Enemigo Verde Bala2.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Enemigo Verde Bala3.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Balas/bala_verde_sp.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Balas/bala_roja_sp.png" type="Texture" id=4]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 10, 10 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 10, 0, 10, 10 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 20, 0, 10, 10 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 10, 10 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 10, 0, 10, 10 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 20, 0, 10, 10 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 20, 0, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 40, 0, 20, 20 )
+
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "mc_bala",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 7 ) ],
 "loop": true,
 "name": "enemigo_verde",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 6 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 10 ) ],
 "loop": true,
 "name": "enemigo_rojo",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "mc_bala",
+"speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8.93764, 17.147 )
 
 [node name="bullet" type="Area2D" groups=[
@@ -40,13 +70,12 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
-frames = SubResource( 3 )
-animation = "mc_bala"
-frame = 2
+frames = SubResource( 4 )
+animation = "enemigo_rojo"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 visible = false

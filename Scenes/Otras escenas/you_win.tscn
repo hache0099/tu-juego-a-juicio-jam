@@ -104,7 +104,7 @@ align = 1
 position = Vector2( 512, 328.446 )
 scale = Vector2( 2.96, 2.96 )
 frames = SubResource( 12 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="menu" type="Button" parent="."]
